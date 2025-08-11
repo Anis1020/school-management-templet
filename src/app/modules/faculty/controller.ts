@@ -1,45 +1,45 @@
 import { catchAsync } from "../../utils/catchAsync";
-import { StudentServices } from "./services";
+import { FacultyServices } from "./services";
 
-const getAllStudent = catchAsync(async (req, res) => {
-  const result = await StudentServices.getAllStudentFromDB();
+const getAllFaculty = catchAsync(async (req, res) => {
+  const result = await FacultyServices.getAllFacultyFromDB();
   res.status(200).json({
     success: true,
-    message: "get all student",
+    message: "get all Faculty",
     data: result,
   });
 });
-const getSingleStudent = catchAsync(async (req, res) => {
+const getSingleFaculty = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const result = await StudentServices.getSingleStudentFromDB(id);
+  const result = await FacultyServices.getSingleFacultyFromDB(id);
   res.status(200).json({
     success: true,
-    message: "get single student",
+    message: "get single Faculty",
     data: result,
   });
 });
-const updateStudent = catchAsync(async (req, res) => {
+const updateFaculty = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const result = await StudentServices.updateStudentFromDB(id, req.body);
+  const result = await FacultyServices.updateFacultyFromDB(id, req.body);
   res.status(200).json({
     success: true,
-    message: "update student",
+    message: "update Faculty",
     data: result,
   });
 });
-const deleteStudent = catchAsync(async (req, res) => {
+const deleteFaculty = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const result = await StudentServices.getSingleStudentFromDB(id);
+  const result = await FacultyServices.getSingleFacultyFromDB(id);
   res.status(200).json({
     success: true,
-    message: "delete student",
+    message: "delete Faculty",
     data: result,
   });
 });
 
-export const StudentController = {
-  getAllStudent,
-  getSingleStudent,
-  updateStudent,
-  deleteStudent,
+export const FacultyController = {
+  getAllFaculty,
+  getSingleFaculty,
+  updateFaculty,
+  deleteFaculty,
 };

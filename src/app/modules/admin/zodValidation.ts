@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { Types } from "mongoose";
 
-export const createStudentValidationSchema = z.object({
+export const createAdminValidationSchema = z.object({
   body: z.object({
     user: z.string().refine((val) => Types.ObjectId.isValid(val), {
       message: "Invalid ObjectId",
@@ -32,7 +32,7 @@ export const createStudentValidationSchema = z.object({
   }),
 });
 
-export const updateStudentValidationSchema = z.object({
+export const updateAdminValidationSchema = z.object({
   body: z.object({
     user: z
       .string()
@@ -85,7 +85,7 @@ export const updateStudentValidationSchema = z.object({
   }),
 });
 
-export const StudentValidations = {
-  createStudentValidationSchema,
-  updateStudentValidationSchema,
+export const AdminValidations = {
+  createAdminValidationSchema,
+  updateAdminValidationSchema,
 };

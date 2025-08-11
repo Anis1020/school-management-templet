@@ -1,26 +1,26 @@
-import { TStudent } from "./interface";
-import { StudentModel } from "./schemaModel";
+import { TAdmin } from "./interface";
+import { AdminModel } from "./schemaModel";
 
-const getAllStudentFromDB = async () => {
-  const result = await StudentModel.find();
+const getAllAdminFromDB = async () => {
+  const result = await AdminModel.find();
   return result;
 };
-const getSingleStudentFromDB = async (id: string) => {
-  const result = await StudentModel.findById(id);
+const getSingleAdminFromDB = async (id: string) => {
+  const result = await AdminModel.findById(id);
   return result;
 };
-const updateStudentFromDB = async (id: string, payload: Partial<TStudent>) => {
-  const result = await StudentModel.findByIdAndUpdate(id);
+const updateAdminFromDB = async (id: string, payload: Partial<TAdmin>) => {
+  const result = await AdminModel.findByIdAndUpdate(id);
   return result;
 };
-const deleteStudentFromDB = async (id: string) => {
-  const result = await StudentModel.findByIdAndUpdate(id);
+const deleteAdminFromDB = async (id: string) => {
+  const result = await AdminModel.findByIdAndUpdate(id);
   return result;
 };
 
-export const StudentServices = {
-  getAllStudentFromDB,
-  getSingleStudentFromDB,
-  updateStudentFromDB,
-  deleteStudentFromDB,
+export const AdminServices = {
+  getAllAdminFromDB,
+  getSingleAdminFromDB,
+  updateAdminFromDB,
+  deleteAdminFromDB,
 };

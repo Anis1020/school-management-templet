@@ -1,45 +1,45 @@
 import { catchAsync } from "../../utils/catchAsync";
-import { StudentServices } from "./services";
+import { AdminServices } from "./services";
 
-const getAllStudent = catchAsync(async (req, res) => {
-  const result = await StudentServices.getAllStudentFromDB();
+const getAllAdmin = catchAsync(async (req, res) => {
+  const result = await AdminServices.getAllAdminFromDB();
   res.status(200).json({
     success: true,
-    message: "get all student",
+    message: "get all Admin",
     data: result,
   });
 });
-const getSingleStudent = catchAsync(async (req, res) => {
+const getSingleAdmin = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const result = await StudentServices.getSingleStudentFromDB(id);
+  const result = await AdminServices.getSingleAdminFromDB(id);
   res.status(200).json({
     success: true,
-    message: "get single student",
+    message: "get single Admin",
     data: result,
   });
 });
-const updateStudent = catchAsync(async (req, res) => {
+const updateAdmin = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const result = await StudentServices.updateStudentFromDB(id, req.body);
+  const result = await AdminServices.updateAdminFromDB(id, req.body);
   res.status(200).json({
     success: true,
-    message: "update student",
+    message: "update Admin",
     data: result,
   });
 });
-const deleteStudent = catchAsync(async (req, res) => {
+const deleteAdmin = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const result = await StudentServices.getSingleStudentFromDB(id);
+  const result = await AdminServices.getSingleAdminFromDB(id);
   res.status(200).json({
     success: true,
-    message: "delete student",
+    message: "delete Admin",
     data: result,
   });
 });
 
-export const StudentController = {
-  getAllStudent,
-  getSingleStudent,
-  updateStudent,
-  deleteStudent,
+export const AdminController = {
+  getAllAdmin,
+  getSingleAdmin,
+  updateAdmin,
+  deleteAdmin,
 };

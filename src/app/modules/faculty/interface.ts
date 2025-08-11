@@ -1,7 +1,7 @@
 import { Schema, model, Types } from "mongoose";
 
 // User Interface
-export type TStudent = {
+export type TFaculty = {
   id: string;
   user: Types.ObjectId; // reference to another model (like Auth or Account)
   name: string;

@@ -1,8 +1,8 @@
 import { model, Schema } from "mongoose";
-import { TStudent } from "./interface";
+import { TFaculty } from "./interface";
 
 // Mongoose Schema
-const studentSchema = new Schema<TStudent>(
+const FacultySchema = new Schema<TFaculty>(
   {
     id: {
       type: String,
@@ -66,4 +66,4 @@ const studentSchema = new Schema<TStudent>(
   }
 );
 
-export const StudentModel = model<TStudent>("Student", studentSchema);
+export const FacultyModel = model<TFaculty>("Faculty", FacultySchema);

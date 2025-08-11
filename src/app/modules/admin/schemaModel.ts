@@ -1,8 +1,8 @@
 import { model, Schema } from "mongoose";
-import { TStudent } from "./interface";
+import { TAdmin } from "./interface";
 
 // Mongoose Schema
-const studentSchema = new Schema<TStudent>(
+const adminSchema = new Schema<TAdmin>(
   {
     id: {
       type: String,
@@ -27,6 +27,7 @@ const studentSchema = new Schema<TStudent>(
     dateOfBirth: {
       type: String,
       required: true,
+      trim: true,
     },
     email: {
       type: String,
@@ -38,24 +39,27 @@ const studentSchema = new Schema<TStudent>(
     contactNo: {
       type: String,
       required: true,
+      trim: true,
     },
     presentAddress: {
       type: String,
       required: true,
+      trim: true,
     },
     permanentAddress: {
       type: String,
       required: true,
+      trim: true,
     },
     guardian: {
-      name: { type: String, required: true },
-      contactNo: { type: String, required: true },
-      relation: { type: String, required: true },
+      name: { type: String, required: true, trim: true },
+      contactNo: { type: String, required: true, trim: true },
+      relation: { type: String, required: true, trim: true },
     },
     localGuardian: {
-      name: { type: String, required: true },
-      contactNo: { type: String, required: true },
-      relation: { type: String, required: true },
+      name: { type: String, required: true, trim: true },
+      contactNo: { type: String, required: true, trim: true },
+      relation: { type: String, required: true, trim: true },
     },
     profilePicture: {
       type: String, // store image URL or path
@@ -66,4 +70,4 @@ const studentSchema = new Schema<TStudent>(
   }
 );
 
-export const StudentModel = model<TStudent>("Student", studentSchema);
+export const AdminModel = model<TAdmin>("Admin", adminSchema);

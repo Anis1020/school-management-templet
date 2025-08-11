@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { StudentController } from "./controller";
+import { FacultyController } from "./controller";
 
 const router = Router();
 
-router.get("/", StudentController.getAllStudent);
-router.get("/:id", StudentController.getSingleStudent);
-router.patch("/:id", StudentController.updateStudent);
-router.delete("/:id", StudentController.deleteStudent);
+router.get("/", FacultyController.getAllFaculty);
+router.get("/:id", FacultyController.getSingleFaculty);
+router.patch("/:id", FacultyController.updateFaculty);
+router.delete("/:id", FacultyController.deleteFaculty);
 
-export const StudentRoute = router;
+export const FacultyRoute = router;
