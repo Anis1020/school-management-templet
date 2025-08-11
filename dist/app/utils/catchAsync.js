@@ -9,18 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserController = void 0;
-const catchAsync_1 = require("../../utils/catchAsync");
-const services_1 = require("./services");
-const createStudent = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    //   const { student } = req.body;
-    const result = yield services_1.UserServices.createStudentIntoDB(req.body);
-    res.status(200).json({
-        success: true,
-        message: "student created successfully",
-        data: result,
+exports.catchAsync = void 0;
+const catchAsync = (fn) => {
+    return (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+        Promise.resolve(fn(req, res, next)).catch((err) => next(err));
     });
-}));
-exports.UserController = {
-    createStudent,
 };
+exports.catchAsync = catchAsync;
