@@ -9,27 +9,27 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StudentServices = void 0;
+exports.FacultyServices = void 0;
 const schemaModel_1 = require("./schemaModel");
-const getAllStudentFromDB = () => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield schemaModel_1.StudentModel.find();
+const getAllFacultyFromDB = () => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield schemaModel_1.FacultyModel.find();
     return result;
 });
-const getSingleStudentFromDB = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield schemaModel_1.StudentModel.findById(id);
+const getSingleFacultyFromDB = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield schemaModel_1.FacultyModel.findById(id);
     return result;
 });
-const updateStudentFromDB = (id, payload) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield schemaModel_1.StudentModel.findByIdAndUpdate(id);
+const updateFacultyFromDB = (id, payload) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield schemaModel_1.FacultyModel.findByIdAndUpdate(id);
     return result;
 });
-const deleteStudentFromDB = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield schemaModel_1.StudentModel.findByIdAndUpdate(id);
+const deleteFacultyFromDB = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield schemaModel_1.FacultyModel.findByIdAndUpdate(id);
     return result;
 });
-exports.StudentServices = {
-    getAllStudentFromDB,
-    getSingleStudentFromDB,
-    updateStudentFromDB,
-    deleteStudentFromDB,
+exports.FacultyServices = {
+    getAllFacultyFromDB,
+    getSingleFacultyFromDB,
+    updateFacultyFromDB,
+    deleteFacultyFromDB,
 };

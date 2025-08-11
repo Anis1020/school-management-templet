@@ -21,6 +21,26 @@ const createStudent = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 
         data: result,
     });
 }));
+const createFaculty = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    //   const { Faculty } = req.body;
+    const result = yield services_1.UserServices.createFacultyIntoDB(req.body);
+    res.status(200).json({
+        success: true,
+        message: "Faculty created successfully",
+        data: result,
+    });
+}));
+const createAdmin = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    //   const { Admin } = req.body;
+    const result = yield services_1.UserServices.createAdminIntoDB(req.body);
+    res.status(200).json({
+        success: true,
+        message: "Admin created successfully",
+        data: result,
+    });
+}));
 exports.UserController = {
     createStudent,
+    createAdmin,
+    createFaculty,
 };

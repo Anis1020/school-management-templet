@@ -9,11 +9,21 @@ const router_5 = require("../modules/academicDepartment/router");
 const router_6 = require("../modules/course/router");
 const router_7 = require("../modules/semesterRegistration/router");
 const router_8 = require("../modules/offeredCourse/router");
+const router_9 = require("../modules/admin/router");
+const router_10 = require("../modules/faculty/router");
 const router = (0, express_1.Router)();
 const routerProvider = [
     {
         path: "/users",
         route: router_1.UserRouter,
+    },
+    {
+        path: "/admins",
+        route: router_9.AdminRoute,
+    },
+    {
+        path: "/faculties",
+        route: router_10.FacultyRoute,
     },
     {
         path: "/students",

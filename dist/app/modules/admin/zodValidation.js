@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StudentValidations = exports.updateStudentValidationSchema = exports.createStudentValidationSchema = void 0;
+exports.AdminValidations = exports.updateAdminValidationSchema = exports.createAdminValidationSchema = void 0;
 const zod_1 = require("zod");
 const mongoose_1 = require("mongoose");
-exports.createStudentValidationSchema = zod_1.z.object({
+exports.createAdminValidationSchema = zod_1.z.object({
     body: zod_1.z.object({
         user: zod_1.z.string().refine((val) => mongoose_1.Types.ObjectId.isValid(val), {
             message: "Invalid ObjectId",
@@ -33,7 +33,7 @@ exports.createStudentValidationSchema = zod_1.z.object({
         profilePicture: zod_1.z.string().optional(),
     }),
 });
-exports.updateStudentValidationSchema = zod_1.z.object({
+exports.updateAdminValidationSchema = zod_1.z.object({
     body: zod_1.z.object({
         user: zod_1.z
             .string()
@@ -85,7 +85,7 @@ exports.updateStudentValidationSchema = zod_1.z.object({
         profilePicture: zod_1.z.string().optional(),
     }),
 });
-exports.StudentValidations = {
-    createStudentValidationSchema: exports.createStudentValidationSchema,
-    updateStudentValidationSchema: exports.updateStudentValidationSchema,
+exports.AdminValidations = {
+    createAdminValidationSchema: exports.createAdminValidationSchema,
+    updateAdminValidationSchema: exports.updateAdminValidationSchema,
 };

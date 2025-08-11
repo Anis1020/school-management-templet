@@ -9,47 +9,47 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StudentController = void 0;
+exports.AdminController = void 0;
 const catchAsync_1 = require("../../utils/catchAsync");
 const services_1 = require("./services");
-const getAllStudent = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield services_1.StudentServices.getAllStudentFromDB();
+const getAllAdmin = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield services_1.AdminServices.getAllAdminFromDB();
     res.status(200).json({
         success: true,
-        message: "get all student",
+        message: "get all Admin",
         data: result,
     });
 }));
-const getSingleStudent = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getSingleAdmin = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
-    const result = yield services_1.StudentServices.getSingleStudentFromDB(id);
+    const result = yield services_1.AdminServices.getSingleAdminFromDB(id);
     res.status(200).json({
         success: true,
-        message: "get single student",
+        message: "get single Admin",
         data: result,
     });
 }));
-const updateStudent = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const updateAdmin = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
-    const result = yield services_1.StudentServices.updateStudentFromDB(id, req.body);
+    const result = yield services_1.AdminServices.updateAdminFromDB(id, req.body);
     res.status(200).json({
         success: true,
-        message: "update student",
+        message: "update Admin",
         data: result,
     });
 }));
-const deleteStudent = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const deleteAdmin = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
-    const result = yield services_1.StudentServices.getSingleStudentFromDB(id);
+    const result = yield services_1.AdminServices.getSingleAdminFromDB(id);
     res.status(200).json({
         success: true,
-        message: "delete student",
+        message: "delete Admin",
         data: result,
     });
 }));
-exports.StudentController = {
-    getAllStudent,
-    getSingleStudent,
-    updateStudent,
-    deleteStudent,
+exports.AdminController = {
+    getAllAdmin,
+    getSingleAdmin,
+    updateAdmin,
+    deleteAdmin,
 };
