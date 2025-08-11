@@ -1,0 +1,8 @@
+import { NextFunction, Request, Response } from "express";
+
+export const notFound = (req: Request, res: Response, next: NextFunction) => {
+  res.status(500).json({
+    success: false,
+    message: "API not found",
+  });
+};
